@@ -5,7 +5,9 @@ pipeline {
         stage("Clone Code") {
             steps {
                 echo "Cloning the code"
+                sh "pwd"
                 git url: "https://github.com/kanzalqalandri/Vidly.git", branch: "master"
+                sh "pwd"
             }
         }
         
