@@ -4,16 +4,16 @@ services:
   frontend:
     depends_on: 
       - backend
-    build: ./frontend
+    image: kanzal/vidly-front
     environment:
       REACT_APP_API_URL: http://146.190.244.35:3001/api
     ports:
       - 3000:3000
 
   backend: 
-    depends_on: 
+    depends_on:
       - db
-    build: ./backend
+    image: vidly-back
     ports: 
       - 3001:3001
     environment: 
