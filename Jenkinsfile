@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo "Building the image"
                 sh "docker build -t vidly-front ./frontend"
-                sh "docker build -t my-note-app ./frontend"
+                sh "docker build -t vidly-back ./backend"
             }
         }
         
