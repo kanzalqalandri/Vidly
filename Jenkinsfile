@@ -12,8 +12,8 @@ pipeline {
         stage("Build") {
             steps {
                 echo "Building the image"
-                sh "docker build -t vidly-front ./frontend"
-                sh "docker build -t vidly-back ./backend"
+                sh "docker build -t vidly-f ./frontend"
+                sh "docker build -t vidly-b ./backend"
             }
         }
     }
