@@ -12,13 +12,9 @@ pipeline {
         stage("Build") {
             steps {
                 echo "Building the image"
-                script {
-                    docker.build("vidly-front", "./frontend")
-                    docker.build("vidly-back", "./backend")
-                }
+                sh "docker build -t vidly-front ./frontend"
+                sh "docker build -t vidly-back ./backend"
             }
         }
-        
     }
 }
-
