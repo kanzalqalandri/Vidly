@@ -17,7 +17,7 @@ pipeline {
             }
         }
 
-        stage (Push to Docker Hub) {
+        stage("Push to Docker Hub") {
             steps {
                 echo "Pushing the images to DockerHub"
                 sh "docker tag vidly-front kanzal/vidly-front"
@@ -25,14 +25,13 @@ pipeline {
                 sh "docker login -u kanzal -p 'kanzal123'"
                 sh "docker push kanzal/vidly-front"
                 sh "docker push kanzal/vidly-back"
-                
             }
         }
 
-        stage (Deploy) {
+        stage("Deploy") {
             steps {
                 echo "Deploying the container with docker compose"
-                sh "docker compose down && docker compose up"
+                sh "docker-compose down && docker-compose up"
             }
         }
     }
